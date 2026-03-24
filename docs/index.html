@@ -3,9 +3,52 @@
 <head>
   <title>Driver-Based Cost Signal Engine</title>
   <style>
-    body { font-family: Arial; max-width: 900px; margin: auto; padding: 40px; }
-    h1 { color: #2c3e50; }
-    .box { background: #f4f4f4; padding: 20px; border-radius: 8px; }
+    body {
+      font-family: Arial;
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      color: #1f2d3d;
+      font-size: 36px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      color: #2c3e50;
+    }
+
+    .box {
+      background: #f4f6f8;
+      padding: 25px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .highlight {
+      background: #e8f4fd;
+      padding: 15px;
+      border-left: 5px solid #3498db;
+      margin-top: 20px;
+    }
+
+    .code {
+      background: #2d2d2d;
+      color: #ffffff;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: monospace;
+      margin-top: 20px;
+    }
+
+    .footer {
+      margin-top: 60px;
+      font-size: 14px;
+      color: #888;
+    }
   </style>
 </head>
 
@@ -14,23 +57,74 @@
 <h1>Driver-Based Cost Signal Engine</h1>
 
 <p>
-A FinOps operating engine that standardizes cloud cost detection
-from raw usage signals to drivers, ownership, action, and economics.
+A FinOps operating engine that standardizes cloud cost detection from raw usage signals 
+to <strong>drivers, ownership, action, and economics</strong>.
 </p>
 
+<div class="highlight">
+<strong>Core idea:</strong><br>
+Stop detecting cost at the service level.  
+Start detecting cost at the <strong>driver level</strong>.
+</div>
+
+---
+
+<h2>How it Works</h2>
+
 <div class="box">
-<h2>How it works</h2>
 <ul>
-<li>Normalize usage → drivers</li>
-<li>Detect driver deltas</li>
-<li>Map to owners</li>
-<li>Generate actions</li>
-<li>Enable unit economics</li>
+<li><strong>Normalize</strong> cloud usage → standard drivers</li>
+<li><strong>Detect</strong> driver deltas vs baseline</li>
+<li><strong>Attribute</strong> signals to teams & owners</li>
+<li><strong>Generate</strong> actionable recommendations</li>
+<li><strong>Translate</strong> into unit economics</li>
 </ul>
 </div>
 
+---
+
+<h2>Example Detection Output</h2>
+
+<div class="code">
+[ALERT] payments-handler | Request_Count | +150% | Owner: Checkout Team  
+Action: Check for recursive invocation or traffic spike  
+Estimated Cost Impact: $4,200
+</div>
+
+---
+
+<h2>Architecture Flow</h2>
+
+<div class="box">
+Raw Usage → Driver Normalization → Driver Detection → Ownership → Action → Economics
+</div>
+
+---
+
+<h2>Why This Matters</h2>
+
+<div class="box">
+<ul>
+<li>Moves FinOps from reactive → operational</li>
+<li>Standardizes cost detection across services</li>
+<li>Enables faster root cause analysis</li>
+<li>Supports cost-per-transaction modeling</li>
+<li>Bridges engineering and finance</li>
+</ul>
+</div>
+
+---
+
 <h2>Key Insight</h2>
-<p><strong>Cost is not a service problem. It’s a driver behavior problem.</strong></p>
+
+<div class="highlight">
+<strong>Cost is not a service problem.  
+It’s a driver behavior problem.</strong>
+</div>
+
+<div class="footer">
+Built by Dr. Christine | FinOps Operating Systems
+</div>
 
 </body>
 </html>
